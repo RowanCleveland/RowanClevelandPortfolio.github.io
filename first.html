@@ -1,84 +1,92 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-<title>FIRST Robotics | Rowan Cleveland</title>
+    <title>FIRST Robotics | Rowan Cleveland</title>
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 
-<style>
-
-    .featured-design {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-        margin-top: 30px;
-    }
-
-    .design-section {
-        width: 100%;
-    }
-
-    .carousel {
-        position: relative;
-        width: 100%;
-        height: 120px;
-        overflow: hidden;
-        background: #eee;
-    }
-
-    .carousel-image {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display: block;
-    }
-
-    .carousel-button {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        border: none;
-        background: rgba(0, 0, 0, 0.65);
-        color: white;
-        font-size: 20px;
-        width: 35px;
-        height: 45px;
-        cursor: pointer;
-    }
-
-    .carousel-button:hover {
-        background: rgba(0, 0, 0, 0.85);
-    }
-
-    .carousel-button.prev {
-        left: 5px;
-    }
-
-    .carousel-button.next {
-        right: 5px;
-    }
-
-    .carousel-text {
-        margin-top: 15px;
-        line-height: 1.6;
-    }
-
-    @media (max-width: 700px) {
+    <style>
 
         .featured-design {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
         }
 
-    }
+        .design-section {
+            width: 100%;
+        }
 
-</style>
-```
+        /* SMALL CAROUSEL BOX */
+        .featured-design .carousel {
+            position: relative;
+            width: 300px;
+            height: 140px;
+            margin: 0 auto;
+            overflow: hidden;
+            background: #eee;
+        }
+
+        /* ACTUAL CAROUSEL IMAGE */
+        .featured-design .carousel .carousel-image {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 100% !important;
+            max-height: 100% !important;
+            object-fit: contain !important;
+            display: block;
+            margin: 0;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+            font-size: 20px;
+            width: 35px;
+            height: 45px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .carousel-button:hover {
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .carousel-button.prev {
+            left: 5px;
+        }
+
+        .carousel-button.next {
+            right: 5px;
+        }
+
+        .carousel-text {
+            margin-top: 15px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 700px) {
+
+            .featured-design {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-design .carousel {
+                width: 300px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -86,9 +94,7 @@
 
 <nav>
 
-```
-<div class="logo">RC.</div>
-```
+    <div class="logo">RC.</div>
 
 <div class="nav-links">
     <a href="index.html">Home</a>
@@ -102,174 +108,173 @@
 
 </nav>
 
+
 <main class="page">
 
-```
-<div class="section-label">
-    01 / Robotics
-</div>
+    <div class="section-label">
+        01 / Robotics
+    </div>
 
-<h1>
-    FIRST Robotics
-</h1>
+    <h1>
+        FIRST Robotics
+    </h1>
 
-<p class="intro">
-    My experience as a Design Lead on a FIRST Robotics Competition
-    team has been one of my biggest introductions to engineering
-    as a collaborative process.
-</p>
-
-
-<img src="Screenshot 2026-10-08 100906.jpg" alt="FIRST Robotics robot">
-
-
-<div class="content">
-
-    <h2>Design Leadership</h2>
-
-    <p>
-        I became involved in the team's mechanical design process
-        and learned CAD extensively in order to contribute to the
-        robot's development.
-    </p>
-
-    <p>
-        As Design Lead, I worked with students across the design
-        process while helping newer members learn CAD and understand
-        how mechanical decisions affect the rest of the robot.
+    <p class="intro">
+        My experience as a Design Lead on a FIRST Robotics Competition
+        team has been one of my biggest introductions to engineering
+        as a collaborative process.
     </p>
 
 
-    <h2>What I Worked On</h2>
+    <img src="Screenshot 2026-10-08 100906.jpg" alt="FIRST Robotics robot">
 
-    <div class="cards">
 
-        <div class="card">
+    <div class="content">
 
-            <h3>Robot Design</h3>
+        <h2>Design Leadership</h2>
 
-            <p>
-                Designed mechanisms and assemblies while working
-                within the physical and competition constraints
-                of the robot.
-            </p>
+        <p>
+            I became involved in the team's mechanical design process
+            and learned CAD extensively in order to contribute to the
+            robot's development.
+        </p>
+
+        <p>
+            As Design Lead, I worked with students across the design
+            process while helping newer members learn CAD and understand
+            how mechanical decisions affect the rest of the robot.
+        </p>
+
+
+        <h2>What I Worked On</h2>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <h3>Robot Design</h3>
+
+                <p>
+                    Designed mechanisms and assemblies while working
+                    within the physical and competition constraints
+                    of the robot.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Prototyping</h3>
+
+                <p>
+                    Built and tested physical concepts before committing
+                    to final mechanisms.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <h3>Design Process</h3>
+
+                <p>
+                    Compared possible solutions and used testing and
+                    iteration to improve designs.
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="card">
-
-            <h3>Prototyping</h3>
-
-            <p>
-                Built and tested physical concepts before committing
-                to final mechanisms.
-            </p>
-
-        </div>
+        <h2>Featured Design</h2>
 
 
-        <div class="card">
+        <div class="featured-design">
 
-            <h3>Design Process</h3>
 
-            <p>
-                Compared possible solutions and used testing and
-                iteration to improve designs.
-            </p>
+            <div class="design-section">
+
+                <div class="carousel">
+
+                    <img class="carousel-image"
+                         src="Robot Design 1.jpg"
+                         alt="Robot design">
+
+                    <button class="carousel-button prev"
+                            onclick="changeImage(0, -1)">
+                        ←
+                    </button>
+
+                    <button class="carousel-button next"
+                            onclick="changeImage(0, 1)">
+                        →
+                    </button>
+
+                </div>
+
+                <p class="carousel-text" id="text-0">
+                    Description of the first robot design or mechanism.
+                </p>
+
+            </div>
+
+
+            <div class="design-section">
+
+                <div class="carousel">
+
+                    <img class="carousel-image"
+                         src="Mechanism 1.jpg"
+                         alt="Robot mechanism">
+
+                    <button class="carousel-button prev"
+                            onclick="changeImage(1, -1)">
+                        ←
+                    </button>
+
+                    <button class="carousel-button next"
+                            onclick="changeImage(1, 1)">
+                        →
+                    </button>
+
+                </div>
+
+                <p class="carousel-text" id="text-1">
+                    Description of the first mechanism or project.
+                </p>
+
+            </div>
+
 
         </div>
 
     </div>
-
-
-    <h2>Featured Design</h2>
-
-    <div class="featured-design">
-
-
-        <div class="design-section">
-
-            <div class="carousel">
-
-                <img class="carousel-image"
-                     src="Robot Design 1.jpg"
-                     alt="Robot design">
-
-                <button class="carousel-button prev"
-                        onclick="changeImage(0, -1)">
-                    ←
-                </button>
-
-                <button class="carousel-button next"
-                        onclick="changeImage(0, 1)">
-                    →
-                </button>
-
-            </div>
-
-            <p class="carousel-text" id="text-0">
-                Description of the first robot design or mechanism.
-            </p>
-
-        </div>
-
-
-        <div class="design-section">
-
-            <div class="carousel">
-
-                <img class="carousel-image"
-                     src="Mechanism 1.jpg"
-                     alt="Robot mechanism">
-
-                <button class="carousel-button prev"
-                        onclick="changeImage(1, -1)">
-                    ←
-                </button>
-
-                <button class="carousel-button next"
-                        onclick="changeImage(1, 1)">
-                    →
-                </button>
-
-            </div>
-
-            <p class="carousel-text" id="text-1">
-                Description of the first mechanism or project.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</div>
-```
 
 </main>
 
+
 <div class="page-navigation">
 
-```
-<a class="nav-button" href="index.html">
-    ← Home
-</a>
+    <a class="nav-button" href="index.html">
+        ← Home
+    </a>
 
-<a class="nav-button next" href="vex.html">
-    VEX Robotics →
-</a>
-```
+    <a class="nav-button next" href="vex.html">
+        VEX Robotics →
+    </a>
 
 </div>
 
+
 <footer>
 
-```
-<p>Rowan Cleveland • Engineering Portfolio</p>
-```
+    <p>Rowan Cleveland • Engineering Portfolio</p>
 
 </footer>
+
 
 <script>
 
