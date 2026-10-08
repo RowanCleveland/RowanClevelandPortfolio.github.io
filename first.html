@@ -22,26 +22,22 @@
             width: 100%;
         }
 
-        /* CAROUSEL SIZE */
         .featured-design .carousel {
             position: relative;
-            width: 300px !important;
-            height: 280px !important;
+            width: 400px !important;
+            height: 300px !important;
             margin: 0 auto !important;
             padding: 0 !important;
             overflow: hidden !important;
             background: #eee;
         }
 
-        /* FORCE IMAGE TO FILL THE CAROUSEL */
-        .featured-design .carousel img.carousel-image {
+        .featured-design .carousel .carousel-image {
             display: block !important;
-            width: 300px !important;
-            height: 280px !important;
+            width: 100% !important;
+            height: 100% !important;
             max-width: none !important;
             max-height: none !important;
-            min-width: 300px !important;
-            min-height: 280px !important;
             object-fit: contain !important;
             margin: 0 !important;
             padding: 0 !important;
@@ -78,14 +74,15 @@
             line-height: 1.6;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 900px) {
 
             .featured-design {
                 grid-template-columns: 1fr;
             }
 
             .featured-design .carousel {
-                width: 300px !important;
+                width: 400px !important;
+                max-width: 100% !important;
             }
 
         }
