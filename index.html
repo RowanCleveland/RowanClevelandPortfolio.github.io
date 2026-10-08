@@ -1,781 +1,170 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Rowan Cleveland | Engineering Portfolio</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b1120;
-            color: #e5e7eb;
-        }
-
-        /* NAVIGATION */
-
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(11, 17, 32, 0.95);
-            border-bottom: 1px solid #263247;
-            padding: 18px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 21px;
-            font-weight: bold;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: #60a5fa;
-        }
-
-        /* HERO */
-
-        .hero {
-            min-height: 85vh;
-            display: flex;
-            align-items: center;
-            padding: 80px 10%;
-            background:
-                radial-gradient(circle at 80% 20%, #1e3a5f 0%, transparent 35%),
-                radial-gradient(circle at 20% 80%, #172554 0%, transparent 30%),
-                #0b1120;
-        }
-
-        .hero-content {
-            max-width: 850px;
-        }
-
-        .small-title {
-            color: #60a5fa;
-            font-weight: bold;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-
-        .hero h1 {
-            font-size: clamp(48px, 8vw, 90px);
-            line-height: 0.95;
-            margin: 20px 0;
-            color: white;
-        }
-
-        .hero h1 span {
-            color: #60a5fa;
-        }
-
-        .hero p {
-            max-width: 700px;
-            font-size: 20px;
-            line-height: 1.7;
-            color: #aeb9c9;
-        }
-
-        .button {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 13px 22px;
-            border: 1px solid #60a5fa;
-            color: #60a5fa;
-            text-decoration: none;
-            border-radius: 6px;
-            transition: 0.2s;
-        }
-
-        .button:hover {
-            background: #60a5fa;
-            color: #0b1120;
-        }
-
-        /* GENERAL SECTIONS */
-
-        section {
-            max-width: 1150px;
-            margin: auto;
-            padding: 100px 30px;
-        }
-
-        .section-label {
-            color: #60a5fa;
-            font-size: 13px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
-
-        h2 {
-            font-size: 42px;
-            margin: 10px 0 45px;
-            color: white;
-        }
-
-        .section-intro {
-            max-width: 750px;
-            line-height: 1.8;
-            color: #aeb9c9;
-            font-size: 17px;
-            margin-bottom: 45px;
-        }
-
-        /* ABOUT */
-
-        .about-box {
-            border-left: 3px solid #60a5fa;
-            padding-left: 25px;
-            max-width: 800px;
-            line-height: 1.8;
-            color: #cbd5e1;
-        }
-
-        /* PROJECT CARDS */
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: #111827;
-            border: 1px solid #263247;
-            border-radius: 10px;
-            overflow: hidden;
-            transition: 0.25s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: #60a5fa;
-        }
-
-        .card-content {
-            padding: 25px;
-        }
-
-        .card h3 {
-            margin-top: 0;
-            font-size: 23px;
-            color: white;
-        }
-
-        .card p {
-            line-height: 1.7;
-            color: #aeb9c9;
-        }
-
-        .tag {
-            display: inline-block;
-            margin-top: 10px;
-            margin-right: 5px;
-            padding: 5px 9px;
-            border: 1px solid #334155;
-            border-radius: 4px;
-            font-size: 12px;
-            color: #93c5fd;
-        }
-
-        /* IMAGE PLACEHOLDERS */
-
-        .image-placeholder {
-            height: 220px;
-            background:
-                linear-gradient(135deg, #172033, #0f172a);
-            border-bottom: 1px solid #263247;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            font-size: 14px;
-            letter-spacing: 1px;
-        }
-
-        .large-placeholder {
-            height: 350px;
-            border: 1px dashed #475569;
-            border-radius: 10px;
-            background: #111827;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            margin: 30px 0;
-        }
-
-        /* FEATURED PROJECT */
-
-        .featured {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
-
-        .featured-text h3 {
-            font-size: 30px;
-            color: white;
-        }
-
-        .featured-text p {
-            line-height: 1.8;
-            color: #aeb9c9;
-        }
-
-        /* TIMELINE */
-
-        .timeline {
-            border-left: 2px solid #334155;
-            padding-left: 30px;
-        }
-
-        .timeline-item {
-            margin-bottom: 40px;
-        }
-
-        .timeline-item h3 {
-            color: white;
-            margin-bottom: 5px;
-        }
-
-        .timeline-item .date {
-            color: #60a5fa;
-            font-size: 13px;
-        }
-
-        .timeline-item p {
-            color: #aeb9c9;
-            line-height: 1.7;
-        }
-
-        /* AWARDS */
-
-        .awards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-        }
-
-        .award {
-            background: #111827;
-            border: 1px solid #263247;
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .award strong {
-            color: white;
-        }
-
-        /* FOOTER */
-
-        footer {
-            border-top: 1px solid #263247;
-            text-align: center;
-            padding: 40px;
-            color: #64748b;
-        }
-
-        @media (max-width: 800px) {
-            .nav-links {
-                display: none;
-            }
-
-            .featured {
-                grid-template-columns: 1fr;
-            }
-
-            .hero {
-                padding: 70px 30px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+<nav>
 
-    <nav>
-        <div class="logo">RC.</div>
+    <div class="logo">RC.</div>
 
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#first">FIRST Robotics</a>
-            <a href="#vex">VEX Robotics</a>
-            <a href="#projects">Projects</a>
-            <a href="#research">Research</a>
-            <a href="#awards">Awards</a>
-        </div>
-    </nav>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="first.html">FIRST</a>
+        <a href="vex.html">VEX</a>
+        <a href="cad-viewer.html">Projects</a>
+        <a href="research.html">Research</a>
+        <a href="programming.html">Programming</a>
+        <a href="awards.html">Awards</a>
+    </div>
 
-
-    <!-- HOME -->
-
-    <header class="hero">
-        <div class="hero-content">
-
-            <div class="small-title">
-                Engineering Portfolio
-            </div>
-
-            <h1>
-                Rowan<br>
-                <span>Cleveland</span>
-            </h1>
-
-            <p>
-                Mechanical engineering, robotics, CAD, and research.
-                I enjoy turning ideas into things that can actually be built,
-                tested, and improved.
-            </p>
-
-            <a class="button" href="#projects">
-                Explore My Work ↓
-            </a>
-
-        </div>
-    </header>
+</nav>
 
 
-    <!-- ABOUT -->
+<header class="hero">
 
-    <section id="about">
+    <div class="hero-content">
 
-        <div class="section-label">01 / About</div>
-
-        <h2>About Me</h2>
-
-        <div class="about-box">
-
-            <p>
-                I'm a high school student interested in mechanical engineering,
-                robotics, and product design. Most of my experience has come
-                from building things with other people and figuring out what
-                doesn't work along the way.
-            </p>
-
-            <p>
-                I've worked with CAD, mechanical design, prototyping,
-                programming, engineering documentation, and competition
-                robotics. I especially enjoy the process of taking an idea
-                from a sketch to a physical mechanism.
-            </p>
-
+        <div class="small-title">
+            Engineering Portfolio
         </div>
 
-    </section>
-
-
-    <!-- FIRST ROBOTICS -->
-
-    <section id="first">
-
-        <div class="section-label">02 / Robotics</div>
-
-        <h2>FIRST Robotics</h2>
-
-        <p class="section-intro">
-            Design Lead for a FIRST Robotics Competition team. My work has
-            focused on CAD, mechanical design, subsystem development, and
-            helping newer students learn the design process.
-        </p>
-
-        <div class="large-placeholder">
-            FIRST ROBOT / COMPETITION PHOTO
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="image-placeholder">
-                    ROBOT PHOTO
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Mechanical Design</h3>
-
-                    <p>
-                        Designed and developed robot mechanisms while working
-                        through prototypes, measurements, constraints, and
-                        competition requirements.
-                    </p>
-
-                    <span class="tag">CAD</span>
-                    <span class="tag">Mechanical</span>
-                    <span class="tag">Prototyping</span>
-
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="image-placeholder">
-                    CAD SCREENSHOT
-                </div>
-
-                <div class="card-content">
-
-                    <h3>CAD & Design Leadership</h3>
-
-                    <p>
-                        Helped organize the design process and taught students
-                        how to use CAD and contribute to robot design.
-                    </p>
-
-                    <span class="tag">Onshape</span>
-                    <span class="tag">Leadership</span>
-
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="image-placeholder">
-                    PROTOTYPE PHOTO
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Design Iteration</h3>
-
-                    <p>
-                        Used prototypes and decision-making to compare
-                        different mechanical solutions and improve designs
-                        after testing.
-                    </p>
-
-                    <span class="tag">Testing</span>
-                    <span class="tag">Iteration</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- VEX -->
-
-    <section id="vex">
-
-        <div class="section-label">03 / Robotics</div>
-
-        <h2>VEX Robotics</h2>
-
-        <p class="section-intro">
-            VEX robotics has given me another environment to design,
-            build, program, and compete with a smaller team.
-        </p>
-
-        <div class="featured">
-
-            <div class="image-placeholder" style="height: 350px;">
-                VEX ROBOT PHOTO
-            </div>
-
-            <div class="featured-text">
-
-                <h3>Team Dynamite</h3>
-
-                <p>
-                    Worked as a design lead on a VEX team developing a robot
-                    designed to intake game objects, move them through a
-                    conveyor system, and score in multiple goals.
-                </p>
-
-                <p>
-                    Our team competed at the regional level, earning a
-                    strong placement and an Excellence Award.
-                </p>
-
-                <span class="tag">VEX</span>
-                <span class="tag">CAD</span>
-                <span class="tag">Programming</span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- PROJECTS -->
-
-    <section id="projects">
-
-        <div class="section-label">04 / Engineering</div>
-
-        <h2>Projects</h2>
-
-        <p class="section-intro">
-            Independent engineering projects where I have designed,
-            built, tested, or researched solutions to real problems.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-
-                <div class="image-placeholder">
-                    CAD / WATER SYSTEM PHOTO
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Water Transfer System</h3>
-
-                    <p>
-                        Designed a system to move water from a family well
-                        to a barn, applying mechanical and fluid-system
-                        principles to a real-world problem.
-                    </p>
-
-                    <span class="tag">Engineering</span>
-                    <span class="tag">Fluid Systems</span>
-
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="image-placeholder">
-                    CAD PROJECT PHOTO
-                </div>
-
-                <div class="card-content">
-
-                    <h3>CAD Projects</h3>
-
-                    <p>
-                        Mechanical CAD projects involving assemblies,
-                        mechanisms, part design, and solving dimensional
-                        and mechanical constraints.
-                    </p>
-
-                    <span class="tag">CAD</span>
-                    <span class="tag">Onshape</span>
-
-                </div>
-
-            </div>
-
-
-            <div class="card">
-
-                <div class="image-placeholder">
-                    PROJECT PHOTO
-                </div>
-
-                <div class="card-content">
-
-                    <h3>Additional Projects</h3>
-
-                    <p>
-                        More engineering projects, prototypes, and experiments
-                        will be added here as I continue building.
-                    </p>
-
-                    <span class="tag">Design</span>
-                    <span class="tag">Engineering</span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- RESEARCH -->
-
-    <section id="research">
-
-        <div class="section-label">05 / Research</div>
-
-        <h2>Research</h2>
-
-        <div class="featured">
-
-            <div class="featured-text">
-
-                <h3>Bridge Design Research</h3>
-
-                <p>
-                    A comparative analysis investigating how bridge span
-                    influences the carrying capacity of Baltimore,
-                    Pennsylvania, and K-truss bridge designs.
-                </p>
-
-                <p>
-                    The project involved building physical models,
-                    collecting experimental data, measuring deflection,
-                    and using statistical analysis to evaluate the results.
-                </p>
-
-                <span class="tag">AP Research</span>
-                <span class="tag">Engineering</span>
-                <span class="tag">Statistics</span>
-
-            </div>
-
-            <div class="image-placeholder" style="height: 350px;">
-                BRIDGE MODEL / RESEARCH PHOTO
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- EXPERIENCE -->
-
-    <section id="experience">
-
-        <div class="section-label">06 / Experience</div>
-
-        <h2>Experience</h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-
-                <div class="date">ROBOTICS</div>
-
-                <h3>FIRST Robotics — Design Lead</h3>
-
-                <p>
-                    Led mechanical design efforts, developed CAD models,
-                    helped organize the design process, and taught newer
-                    students CAD and engineering concepts.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="date">ROBOTICS</div>
-
-                <h3>VEX Robotics — Design Lead</h3>
-
-                <p>
-                    Designed and developed competition robot mechanisms
-                    while collaborating with teammates on building,
-                    programming, and testing.
-                </p>
-
-            </div>
-
-
-            <div class="timeline-item">
-
-                <div class="date">ENGINEERING</div>
-
-                <h3>Engineering & CAD Projects</h3>
-
-                <p>
-                    Worked on independent engineering projects involving
-                    CAD, mechanical systems, prototyping, and research.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- AWARDS -->
-
-    <section id="awards">
-
-        <div class="section-label">07 / Recognition</div>
-
-        <h2>Awards & Achievements</h2>
-
-        <div class="awards">
-
-            <div class="award">
-                <strong>AP Capstone Diploma</strong>
-            </div>
-
-            <div class="award">
-                <strong>AP Scholar with Distinction</strong>
-            </div>
-
-            <div class="award">
-                <strong>Scholastic Gold Key</strong>
-            </div>
-
-            <div class="award">
-                <strong>VEX Excellence Award</strong>
-            </div>
-
-            <div class="award">
-                <strong>VEX Design Award</strong>
-            </div>
-
-            <div class="award">
-                <strong>Robotics Competition Awards</strong>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-
-    <footer>
+        <h1>
+            Rowan<br>
+            <span>Cleveland</span>
+        </h1>
 
         <p>
-            Rowan Cleveland
+            Mechanical engineering, robotics, CAD, and research.
+            I enjoy turning ideas into things that can actually be
+            designed, built, tested, and improved.
+        </p>
+
+    </div>
+
+</header>
+
+
+<section class="page">
+
+    <div class="section-label">
+        Welcome
+    </div>
+
+    <h1>
+        Engineering Through Building
+    </h1>
+
+    <div class="content">
+
+        <p>
+            I'm a high school student interested in mechanical engineering,
+            robotics, and design. Most of my engineering experience has
+            come from actually building things and figuring out what
+            happens when the design doesn't work the first time.
         </p>
 
         <p>
-            Engineering • Robotics • CAD • Research
+            This portfolio documents the projects, competitions,
+            research, and engineering experiences that have shaped
+            my interest in mechanical engineering.
         </p>
 
-    </footer>
+    </div>
+
+
+    <div class="cards">
+
+        <a class="project-link" href="first.html">
+            <div class="card">
+                <h3>FIRST Robotics</h3>
+                <p>
+                    Mechanical design, CAD, subsystem development,
+                    prototyping, and design leadership.
+                </p>
+                <span class="tag">Explore →</span>
+            </div>
+        </a>
+
+
+        <a class="project-link" href="vex.html">
+            <div class="card">
+                <h3>VEX Robotics</h3>
+                <p>
+                    Competition robotics, mechanism design,
+                    CAD, programming, and teamwork.
+                </p>
+                <span class="tag">Explore →</span>
+            </div>
+        </a>
+
+
+        <a class="project-link" href="cad-viewer.html">
+            <div class="card">
+                <h3>Engineering Projects</h3>
+                <p>
+                    CAD, an augmented-reality CAD viewer,
+                    a siphon pump, and other independent projects.
+                </p>
+                <span class="tag">Explore →</span>
+            </div>
+        </a>
+
+
+        <a class="project-link" href="research.html">
+            <div class="card">
+                <h3>Research</h3>
+                <p>
+                    Structural engineering research involving
+                    physical bridge models and statistical analysis.
+                </p>
+                <span class="tag">Explore →</span>
+            </div>
+        </a>
+
+
+        <a class="project-link" href="programming.html">
+            <div class="card">
+                <h3>Programming</h3>
+                <p>
+                    Computer science projects and programming
+                    work connected to engineering.
+                </p>
+                <span class="tag">Explore →</span>
+            </div>
+        </a>
+
+
+        <a class="project-link" href="awards.html">
+            <div class="card">
+                <h3>Awards & Activities</h3>
+                <p>
+                    Academic recognition, robotics awards,
+                    leadership, and other activities.
+                </p>
+                <span class="tag">Explore →</span>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <p>Rowan Cleveland</p>
+    <p>Engineering • Robotics • CAD • Research</p>
+
+</footer>
 
 </body>
 </html>
-```
