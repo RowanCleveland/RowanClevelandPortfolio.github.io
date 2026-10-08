@@ -10,6 +10,74 @@
 <title>FIRST Robotics | Rowan Cleveland</title>
 
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+    .featured-design {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-top: 30px;
+    }
+
+    .design-section {
+        width: 100%;
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: 220px;
+        overflow: hidden;
+        background: #eee;
+    }
+
+    .carousel-image {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+    }
+
+    .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border: none;
+        background: rgba(0, 0, 0, 0.65);
+        color: white;
+        font-size: 24px;
+        width: 45px;
+        height: 55px;
+        cursor: pointer;
+    }
+
+    .carousel-button:hover {
+        background: rgba(0, 0, 0, 0.85);
+    }
+
+    .carousel-button.prev {
+        left: 10px;
+    }
+
+    .carousel-button.next {
+        right: 10px;
+    }
+
+    .carousel-text {
+        margin-top: 15px;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 700px) {
+
+        .featured-design {
+            grid-template-columns: 1fr;
+        }
+
+    }
+
+</style>
 ```
 
 </head>
@@ -119,6 +187,7 @@
 
     <div class="featured-design">
 
+
         <div class="design-section">
 
             <div class="carousel">
@@ -171,6 +240,7 @@
             </p>
 
         </div>
+
 
     </div>
 
