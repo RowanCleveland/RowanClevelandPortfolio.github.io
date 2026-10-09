@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +9,92 @@
     <title>VEX Robotics | Rowan Cleveland</title>
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .notebook-carousel-section {
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+
+        .notebook-carousel {
+            position: relative;
+            width: 700px !important;
+            max-width: 100% !important;
+            height: 550px !important;
+            margin: 25px auto 0 !important;
+            padding: 0 !important;
+            overflow: hidden !important;
+            background: #eee;
+        }
+
+        .notebook-carousel .notebook-image {
+            display: block !important;
+            width: 100% !important;
+            height: 100% !important;
+            max-width: none !important;
+            max-height: none !important;
+            object-fit: contain !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        .carousel-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            border: none;
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+            font-size: 20px;
+            width: 35px;
+            height: 45px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-button:hover {
+            background: rgba(0, 0, 0, 0.85);
+        }
+
+        .carousel-button.prev {
+            left: 5px;
+        }
+
+        .carousel-button.next {
+            right: 5px;
+        }
+
+        .notebook-carousel-text {
+            margin-top: 15px;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .notebook-counter {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        @media (max-width: 900px) {
+
+            .notebook-carousel {
+                height: 450px !important;
+            }
+
+        }
+
+        @media (max-width: 500px) {
+
+            .notebook-carousel {
+                height: 350px !important;
+            }
+
+        }
+
+    </style>
+
 </head>
 
 <body>
@@ -125,6 +212,44 @@
         </div>
 
 
+        <h2>Engineering Notebook</h2>
+
+        <p>
+            A look at pages from my engineering notebook documenting
+            the robot design process.
+        </p>
+
+        <div class="notebook-carousel-section">
+
+            <div class="notebook-carousel">
+
+                <img class="notebook-image"
+                     src="image1.jpg"
+                     alt="Engineering notebook page 1">
+
+                <button class="carousel-button prev"
+                        onclick="changeNotebookImage(-1)">
+                    ←
+                </button>
+
+                <button class="carousel-button next"
+                        onclick="changeNotebookImage(1)">
+                    →
+                </button>
+
+            </div>
+
+            <p class="notebook-carousel-text" id="notebook-text">
+                Image 1
+            </p>
+
+            <p class="notebook-counter" id="notebook-counter">
+                1 / 10
+            </p>
+
+        </div>
+
+
         <h2>Competition</h2>
 
         <p>
@@ -163,5 +288,53 @@
 
 </footer>
 
+
+<script>
+
+const notebookImages = [
+    "image1.jpg",
+    "image2.jpg",
+    "image3.jpg",
+    "image4.jpg",
+    "image5.jpg",
+    "image6.jpg",
+    "image7.jpg",
+    "image8.jpg",
+    "image9.jpg",
+    "image10.jpg"
+];
+
+let currentNotebookImage = 0;
+
+
+function changeNotebookImage(direction) {
+
+    currentNotebookImage += direction;
+
+    if (currentNotebookImage < 0) {
+        currentNotebookImage = notebookImages.length - 1;
+    }
+
+    if (currentNotebookImage >= notebookImages.length) {
+        currentNotebookImage = 0;
+    }
+
+    document.querySelector(".notebook-image").src =
+        notebookImages[currentNotebookImage];
+
+    document.querySelector(".notebook-image").alt =
+        "Engineering notebook page " + (currentNotebookImage + 1);
+
+    document.getElementById("notebook-text").textContent =
+        "Image " + (currentNotebookImage + 1);
+
+    document.getElementById("notebook-counter").textContent =
+        (currentNotebookImage + 1) + " / " + notebookImages.length;
+
+}
+
+</script>
+
 </body>
 </html>
+```
