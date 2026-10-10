@@ -48,8 +48,8 @@
     </h1>
 
     <p class="intro">
-        A comparative structural engineering study investigating
-        how bridge span affects carrying capacity.
+        An experimental comparative analysis quantifying bridge
+        span as a determinant of carrying capacity in truss designs.
     </p>
 
 
@@ -63,21 +63,40 @@
         <p>
             My research investigated the relationship between bridge span
             and carrying capacity across three different truss bridge
-            designs.
+            designs. Bridge span is the parallel distance between two
+            supporting structures holding the weight of the bridge, while
+            carrying capacity is the maximum amount of weight that the
+            bridge can hold at a time before failure.
         </p>
 
         <p>
             I focused on Baltimore, Pennsylvania, and K-truss designs
-            and compared their performance using physical models.
+            and compared their performance using regression models.
+            These specific truss designs were selected because they are
+            some of the most relevant and prevalent truss bridge designs
+            in modern society. The designs also represent many of the
+            base designs that other trusses reference. My research
+            investigated how the relationship between span and carrying
+            capacity could be comparatively quantified for these three
+            bridge designs.
         </p>
 
 
         <h2>Experimental Design</h2>
 
         <p>
-            I created physical bridge models using PLA and tested their
-            ability to carry increasing loads. Three models of each
-            bridge type were produced for the experiment.
+            I created physical bridge models using PLA filament and
+            tested their ability to carry increasing loads. I designed
+            the bridges in Onshape, an online CAD (Computer Aided Design)
+            program, which allowed precise measurements and reduced the
+            risk of variability between models. I created models of each
+            bridge design at three different controlled lengths: 6 inches,
+            12 inches, and 18 inches. Each bridge maintained the same
+            height of three inches, and I placed each vertical member
+            the same distance apart. With advice from civil engineer
+            Tim Wiess, who aided in the formation of this method, I
+            created each model to limit the only primary variable to
+            span length.
         </p>
 
         <div style="display: grid !important; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important; gap: 20px; width: 100%; margin: 20px 0; box-sizing: border-box;">
@@ -96,29 +115,66 @@
         <h2>Data Collection</h2>
 
         <p>
-            During testing, I recorded measurements including the load
-            carried by each bridge, deflection, and model mass. Bridges
-            were tested until failure or until reaching the maximum
-            testing load.
+            I used the P1S Bambu Labs 3D printer to create the bridges
+            with PLA filament. I chose 3D printing because it creates
+            bridges that are nearly identical to the design created
+            online and reduces fluctuations between the bridges. I
+            fastened each bridge to the same platforms to limit variables
+            that could unexpectedly skew the data. I attached a reinforced
+            bucket to thin metal pieces arranged across the center of
+            the bridge, distributing the weight evenly in the center
+            third of the bridge span. I added weights in standard
+            increments of 1 pound every 5 seconds until the bridge
+            collapsed or gave out.
         </p>
 
         <p>
-            The maximum testing load was 70 pounds.
+            I controlled bridge height, materials, method of construction,
+            load placement, and load increment. The independent variables
+            were bridge span size and bridge design, and the dependent
+            variable was the maximum center load that could be applied.
+            I stabilized each weight on the bridge for at least 5 seconds
+            before determining the bridge's condition. To reduce external
+            factors that may unrealistically skew the data, I conducted
+            tests indoors on a flat surface, leveled the bridges, and
+            recorded the process with a camera set up level to the bridge.
+            For this study, catastrophic failure meant that the bridge
+            broke in four or more members.
         </p>
 
 
         <h2>Statistical Analysis</h2>
 
         <p>
-            I used statistical methods to analyze the experimental data
-            and determine whether relationships existed between bridge
-            span and carrying capacity.
+            I analyzed the difference between the carrying capacity of
+            the two trials for each design and length to determine
+            repeatability and calculate the standard deviation and
+            percent deviation. These deviation measures allowed me to
+            visualize how different each test was from another for each
+            length, with a lower deviation indicating that the results
+            were likely more consistent and reliable. I used both
+            standard deviation in pounds and percent deviation because,
+            for stronger bridges, the numerical deviation may be high
+            even if the bridges were relatively close in maximum weight
+            compared to weaker bridges.
         </p>
 
         <p>
-            The analysis included correlation, regression, and ANOVA.
-            These methods allowed me to compare the bridge designs using
-            more than just the individual test results.
+            I plotted the data on graphs depicting maximum weight versus
+            span length and applied multiple common regression models,
+            including linear, exponential, power, logarithmic, and
+            polynomial. I analyzed each regression model based on its
+            coefficient of determination, or R-squared value, which
+            quantifies how well the model fits the given data. A value
+            of over 0.85 typically indicates a strong correlation between
+            the data and the regression model. I compared the average
+            R-squared values for each model to determine which regression
+            type most closely aligned with the data and standard
+            conventions. The polynomial model had the highest average
+            R-squared value at 0.973, but because it could easily overfit
+            the data with only three different span lengths, I concluded
+            that the power model was the best overall regression model,
+            with an average R-squared value of 0.958.
         </p>
 
 
@@ -130,13 +186,32 @@
         <p>
             The project resulted in a full AP Research paper examining
             the experimental results and their implications for bridge
-            design.
+            design. The power model produced numerical equations
+            relating span to maximum weight for each bridge design:
+            Pennsylvania: y = 6827.3x^-1.423, Baltimore:
+            y = 2939.4x^-1.038, and K-truss: y = 891.19x^-.523.
+            In these models, y represents the maximum weight carried
+            at that length and x represents the span length in inches
+            of the bridge. The coefficient represents the predicted
+            carrying capacity of the bridge if the span length was one
+            inch, and the exponent indicates the rate of decline in
+            strength as span increases.
         </p>
 
         <p>
-            This project gave me experience designing an experiment,
-            collecting physical data, analyzing results, and communicating
-            technical findings.
+            My findings demonstrated that the relationship between span
+            and carrying capacity was inverse and nonlinear. Both the
+            Pennsylvania and Baltimore truss bridges had relatively
+            high carrying capacities at 6 inches, while the K-truss
+            held the most weight at 18 inches. The K-truss data also
+            had more irregularities because several bridges broke at
+            the center where the weight was applied rather than in
+            multiple joints. This suggested that the specific segments
+            where the weight was applied became more of a limiting
+            factor than the span or the truss design itself. This
+            project gave me experience designing an experiment,
+            collecting physical data, analyzing results, and
+            communicating technical findings.
         </p>
 
     </div>
@@ -165,5 +240,6 @@
 </footer>
 
 </body>
+
 </html>
 ```
